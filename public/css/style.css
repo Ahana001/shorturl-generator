@@ -1,0 +1,76 @@
+:root{
+    --bg-color:#D0D1D4;
+    --box-color: #ffffff;
+    --primary-color:#5C6D9A;
+    --secondary-color:
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--bg-color);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+    width: 40%;
+    margin: auto;  
+    background-color: var(--box-color);
+    margin-top: 5vh;
+    border-radius: 5px;
+    padding: 1.5rem;
+}
+.heading i,span{
+    font-size: large;
+    margin: 2vh 0;
+}
+input{
+    padding: 0.5rem;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.error{
+    color: red;
+    font-size: small;
+    margin-top: 0.5vh;
+}
+#output{
+    color: var(--primary-color);
+    font-size: large;
+    margin: 1vh 0;
+}
+
+#output a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+#output a:visited {
+    color: var(--primary-color);
+}
+button{
+    color: var(--box-color);
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+@media screen and (max-width: 786px) {
+    .container {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 567px){
+    .container{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 367px) {
+    .container {
+        width: 80%;
+    }
+}
