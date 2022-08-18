@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const ShortUrl = require('../model/url');
 
+const { validation } = require('../middleware/validation');
+const { getLongUrl } = require('../validations/url.validation');
+
 router.get('/', (req, res, next) => {
     res.render("index");
 });
@@ -24,7 +27,7 @@ router.post("/", async (req, res, next) => {
         short_url: `${req.headers.host}/${shortUrl.shortId}`,
     })
 });
-router.get('/:shortId', async (req, res, next) => {
+router.get('/:shortId', validation(getLongUrl, 'params'), async (req, res, next) => {
     const { shortId } = req.params;
     const result = await ShortUrl.findOne({ shortId })
     if (!result) {
